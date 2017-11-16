@@ -116,7 +116,16 @@ public class App
                 }
 
             }
-            System.out.println("\nBank account number: " + bankaccount.toString());
+            System.out.print("\nBank account number: " + bankaccount.toString());
+            int sum = 0;
+            for(int i=0; i < bankaccount.toString().length(); i++) {
+                sum += (9-i)*new Integer(bankaccount.toString().charAt(i));
+            }
+            int res = sum % 11;
+            if(res != 0) {
+                System.out.print(" ERR");
+            }
+            System.out.print("\n");
         }
     }
 
